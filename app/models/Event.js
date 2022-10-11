@@ -8,4 +8,4 @@ const schema  = mongoose.Schema({
     name: String
 })
 
-module.exports = mongoose.model('City', schema);
+module.exports = mongoose.model('Event', schema);

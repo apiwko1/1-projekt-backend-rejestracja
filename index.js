@@ -8,6 +8,7 @@ app.engine('hbs', hbs.engine({
     defaultLayout: 'main', 
     extname: '.hbs'
 }));
+app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, './views'));
 
 const trainingRouter = require('./app/routes/trainingRouter');
