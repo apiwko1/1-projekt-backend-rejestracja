@@ -1,1 +1,34 @@
-and home piece
+
+<form action="/training" method="post">
+    <input type="text" name="name" required>
+    <select name="city" id="city">
+        {{#each cities}}
+        <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <select name="event" id="event">
+        {{#each events}}
+        <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <input type="submit" value="Dodaj">
+</form>
+
+<table>
+    <tr>
+        <th>Imię i nazwisko</th>
+        <th>Kurs</th>
+        <th>Miasto</th>
+        <th>Usuń</th>
+    </tr>
+    {{#each users}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{event.name}}</td>
+        <td>{{city.name}}</td>
+        <td>
+            <a href="/training/delete/{{_id}}">Usuń</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
