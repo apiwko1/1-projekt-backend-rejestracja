@@ -1,0 +1,59 @@
+body{
+    background-color: darkgray;
+    padding-top: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main{
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    padding: 2em;
+}
+
+.main_tab{
+    width: 100%;
+    margin: 1em;
+}
+.main_tab td{
+    text-align: center;
+}
+
+.main_tab a{
+    text-decoration: none;
+    display: inline-block;
+    background-color:blue;
+    padding: 0.5em;
+    color: yellow;
+    font-weight: bold;
+    border-radius: 10%;
+}
+
+.main_tab tr:nth-child(odd) {
+    background-color: #ccc;
+ }
+
+.main_form{
+margin: 1em;
+}
+
+.main_form input, .main_form select{
+    
+    font-size: 120%;
+    height: 2em;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+}
+
+.main_form input[type=button]{
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+.feedback{
+    height: 7em;
+    padding: 1em;
+    color: red;
+    font-weight: bold;
+}
