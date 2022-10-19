@@ -17,8 +17,6 @@ router.get('/', (req, res) => {
                 // console.log(data.users);
                 res.render('home', data);
             })
-
-
         })
     })
 
@@ -29,7 +27,7 @@ router.post('/', function(req, res){
     user.add(req.body, function(err, user){
         console.log(req.body);
         if(err) res.send(err);
- 
+
         res.redirect('/training')
     })
 });

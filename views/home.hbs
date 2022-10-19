@@ -1,20 +1,26 @@
+<div class="main_form">
+    <form action="/training" method="post" id="m_form" >
+        <input type="text" name="name" id="name">
+        <select name="city" id="city" >
+            <option value=""></option>
+            {{#each cities}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select name="event" id="event" >
+            <option value=""></option>
+            {{#each events}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <input type="button" value="Dodaj" onclick="check()">
+    </form>
+</div>
+<div class="feedback" id="feedback">
 
-<form action="/training" method="post">
-    <input type="text" name="name" required>
-    <select name="city" id="city">
-        {{#each cities}}
-        <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-    </select>
-    <select name="event" id="event">
-        {{#each events}}
-        <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-    </select>
-    <input type="submit" value="Dodaj">
-</form>
+</div>
 
-<table>
+<table class="main_tab">
     <tr>
         <th>Imię i nazwisko</th>
         <th>Kurs</th>
@@ -32,3 +38,30 @@
     </tr>
     {{/each}}
 </table>
+
+<script>
+    function check() {
+        
+        let feedback = '';
+        let name = document.getElementById('name').value;
+        let city = document.getElementById('city').value;
+        let event = document.getElementById('event').value;
+        if(!name){
+            feedback = 'Musisz podać imię i nazwisko <br>';
+        }
+        if(!city){
+            feedback = feedback +  'Musisz podać miasto <br>';
+        }
+        if(!event){
+            feedback = feedback +  'Musisz podać typ szkolenia ';
+        }
+        if(feedback){
+            
+            feedbackArea = document.getElementById('feedback');
+            feedbackArea.innerHTML = feedback;
+        }else{
+            let mForm = document.getElementById('m_form');
+            mForm.submit();
+        }
+    }
+</script>
